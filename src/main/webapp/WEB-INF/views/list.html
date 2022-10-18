@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/showform">create</a>
+<table border="1" width="100%">
+    <tr>
+        <th>STT</th>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    <tr th:each="cho:${listcho}">
+        <td th:text="${cho.getId()}"></td>
+        <td th:text="${cho.getName()}"></td>
+        <td th:text="${cho.getAge()}"></td>
+        <td><a th:href="@{/showedit(id=${cho.getId()})}">edit</a></td>
+        <td><a th:href="@{/showdelete(id=${cho.getId()})}">delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
